@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <style>
+        </style>
+    </head>
+
+    <body> 
+        <p>Rock Paper Scissors v2.0</p>
+        <button onclick="
+            computerChoice = computerChooses();
+            playerChoice = 'rock';
+            whoWins(computerChoice, playerChoice);
+        ">Rock</button>
+        <button onclick="
+            computerChoice = computerChooses();
+            playerChoice = 'paper';
+            whoWins(computerChoice, playerChoice);
+        ">Paper</button>
+        <button onclick="
+            computerChoice = computerChooses();
+            playerChoice = 'scissors';
+            whoWins(computerChoice, playerChoice);
+        ">Scissors</button>
+        <script>
+            function computerChooses() {
+                let choiceNumber = Math.random();
+                let choice = '';
+                if (choiceNumber < 0.34) {
+                    choice = 'rock';
+                } else if(choiceNumber <= 0.67) {
+                    choice = 'paper';
+                } else {
+                    choice = 'scissors';
+                } console.log('Computer: ' + choice);
+                return choice;
+            }
+            
+            function whoWins(computerChoice, playerChoice) {
+                if(computerChoice===playerChoice){
+                    alert('Tie!');
+                } else if(computerChoice==='rock' && playerChoice==='paper'){
+                    alert('You win!');
+                } else if(computerChoice==='rock' && playerChoice==='scissors'){
+                    alert('You lose!');
+                } else if(computerChoice==='paper' && playerChoice==='rock'){
+                    alert('You lose!');
+                } else if(computerChoice==='paper' && playerChoice==='scissors'){
+                    alert('You win!');
+                } else if(computerChoice==='scissors' && playerChoice==='rock'){
+                    alert('You win!');
+                } else if(computerChoice==='scissors' && playerChoice==='paper'){
+                    alert('You lose!');
+                }
+            }
+
+            let computerChoice = '';
+            let playerChoice = '';
+
+            
+        </script>
+    </body>
+    
+
+</html>
+

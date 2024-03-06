@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: rgb(50, 24, 105);
+    display: flex;
+    align-items: center; /* Wyśrodkowanie elementów w pionie */
+    padding: 10px; /* Opcjonalne, aby dodać odstęp wokół nagłówka */
+}
+
+.add{
+    font-size: 36px;
+    display: inline-block;
+}
+
+.icon{
+    font-size: 40px;
+    display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+    .text{
+        display: inline-block;
+        text-align: center;
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Dla ekranów o szerokości maksymalnie 767px (np. na urządzeniach mobilnych) */
+    .text{
+        display: inline-block;
+        text-align: center;
+        flex: 1;
+        font-size: 15px;
+    }
+}

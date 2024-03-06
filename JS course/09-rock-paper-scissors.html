@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <style>
+        </style>
+    </head>
+
+    <body> 
+        <p>Rock Paper Scissors v3.0</p>
+        <button onclick="
+            computerChoice = computerChooses();
+            playerChoice = 'rock';
+            displayMoves(playerChoice, computerChoice);
+            whoWins(computerChoice, playerChoice);
+            // displayScore();
+        ">Rock</button>
+        <button onclick="
+            computerChoice = computerChooses();
+            playerChoice = 'paper';
+            displayMoves(playerChoice, computerChoice);
+            whoWins(computerChoice, playerChoice);
+            // displayScore();
+        ">Paper</button>
+        <button onclick="
+            computerChoice = computerChooses();
+            playerChoice = 'scissors';
+            displayMoves(playerChoice, computerChoice);
+            whoWins(computerChoice, playerChoice);
+            // displayScore();
+        ">Scissors</button>
+        <p class="score">
+            Wins: 0
+            Losses: 0
+            Ties: 0
+        </p>
+        <p class="playersMove"></p>
+        <p class="computersMove"></p>
+        <button onclick="
+            resetScore();
+        ">Reset Score</button>
+        <script>
+            function computerChooses() {
+                let choiceNumber = Math.random();
+                let choice = '';
+                if (choiceNumber < 0.34) {
+                    choice = 'rock';
+                } else if(choiceNumber <= 0.67) {
+                    choice = 'paper';
+                } else {
+                    choice = 'scissors';
+                } console.log('Computer: ' + choice);
+                return choice;
+            }
+            
+            function whoWins(computerChoice, playerChoice) {
+                if(computerChoice===playerChoice){
+                    alert('Tie!');
+                    score.ties += 1;
+                } else if(computerChoice==='rock' && playerChoice==='paper'){
+                    alert('You win!');
+                    score.wins += 1;
+                } else if(computerChoice==='rock' && playerChoice==='scissors'){
+                    alert('You lose!');
+                    score.losses += 1;
+                } else if(computerChoice==='paper' && playerChoice==='rock'){
+                    alert('You lose!');
+                    score.losses += 1;
+                } else if(computerChoice==='paper' && playerChoice==='scissors'){
+                    alert('You win!');
+                    score.wins += 1;
+                } else if(computerChoice==='scissors' && playerChoice==='rock'){
+                    alert('You win!');
+                    score.wins += 1;
+                } else if(computerChoice==='scissors' && playerChoice==='paper'){
+                    alert('You lose!');
+                    score.losses += 1;
+                }
+                updateScore();
+
+             }
+
+            function displayScore() {
+                alert('Wins: ' + score.wins + '\nLosses: ' + score.losses + '\nTies: ' + score.ties);
+            }
+
+            function resetScore() {
+                score.wins = 0;
+                score.losses = 0;
+                score.ties = 0;
+                updateScore();
+            }   
+
+            function updateScore() {
+                document.querySelector('.score').textContent = 'Wins: ' + score.wins + '\nLosses: ' + score.losses + '\nTies: ' + score.ties;
+            }
+
+            function displayMoves(playerChoice, computerChoice) {
+                document.querySelector('.playersMove').textContent = 'You chose: ' + playerChoice;
+                document.querySelector('.computersMove').textContent = 'Computer chose: ' + computerChoice;
+            }
+
+            let score = {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
+            let computerChoice = '';
+            let playerChoice = '';
+
+            
+            
+        </script>
+    </body>
+    
+
+</html>
+

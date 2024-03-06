@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <style>
+            
+        </style>
+    </head>
+
+    <body> 
+        <p>Rock Paper Scissors</p>
+        <button onclick="
+            if(computerChoice === 'rock') {
+                alert('Tie!');
+            } else if(computerChoice === 'paper') {
+                alert('You lose!');
+            } else {
+                alert('You win!');
+            }
+        ">Rock</button>
+        <button onclick="
+            if(computerChoice === 'rock') {
+                alert('You win!');
+            } else if(computerChoice === 'paper') {
+                alert('Tie!');
+            } else {
+                alert('You lose!');
+            }
+        ">Paper</button>
+        <button onclick="
+            if(computerChoice === 'rock') {
+                alert('You lose!');
+            } else if(computerChoice === 'paper') {
+                alert('You win!');
+            } else {
+                alert('Tie!');
+            }
+        ">Scissors</button>
+        <script>
+            let computerChoiceNumber = Math.random();
+            let computerChoice = '';
+            if (computerChoiceNumber < 0.34) {
+                computerChoice = 'rock';
+            } else if(computerChoiceNumber <= 0.67) {
+                computerChoice = 'paper';
+            } else {
+                computerChoice = 'scissors';
+            } console.log('Computer: ' + computerChoice);
+           
+        </script>
+    </body>
+    
+
+</html>
+

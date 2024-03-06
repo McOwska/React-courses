@@ -1,0 +1,42 @@
+.post {
+    background-color: #9c7eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 20rem;
+} 
+    
+.author{
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(234, 219, 251, 1);
+    text-transform: uppercase;
+    margin-top:10px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+}
+
+.text{
+    white-space: pre-wrap;
+    font-size: 1.25rem;
+    color: #593884;
+    font-style: italic;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.close{
+    float: right;
+    cursor: pointer;
+    color: rgb(234, 219, 251, 0.6);
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+

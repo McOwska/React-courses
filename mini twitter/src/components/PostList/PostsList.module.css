@@ -1,0 +1,31 @@
+ .postsList {
+    gap: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    display: grid;
+}
+
+@media screen and (min-width: 768px) {
+    /* Dla ekranów o szerokości co najmniej 768px (np. na laptopach) */
+    .postsList {
+        grid-template-columns: repeat(3, 1fr);
+        width: auto;
+        justify-content: center;
+        margin-left: 10%
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Dla ekranów o szerokości maksymalnie 767px (np. na urządzeniach mobilnych) */
+    .postsList {
+        grid-template-columns: 1fr; /* Jedna kolumna na urządzeniach mobilnych */
+        width: auto;
+        justify-content: center;
+    }
+}
